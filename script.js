@@ -31,53 +31,14 @@ function CreateStudent(name, postcode, telephone, course, grade) {
 
 //create all 14 students
 
-let student1 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
+//new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() )
 
-let student2 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
+let arrayOfStudents = [];
+for (i=0; i<15; i++){
 
-let student3 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
+    arrayOfStudents[i] = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade());
 
-let student4 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student5 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student6 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student7 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student8 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student9 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student10 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student11 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student12 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student13 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student14 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let student15 = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() );
-
-let arrayOfStudents = [
-    student1,
-    student2,
-    student3,
-    student4,
-    student5,
-    student6,
-    student7,
-    student8,
-    student9,
-    student10,
-    student11,
-    student12,
-    student13,
-    student14,
-    student15
-]
+}
 
 console.log(arrayOfStudents);
 
