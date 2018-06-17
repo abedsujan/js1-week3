@@ -1,5 +1,8 @@
 //Create arrays as global variables for the names of the members of the class, and for the postcodes.
 
+
+let result = '';
+
 let names = ['Zeeshan', 'Anas', 'Sajid', 'Anuradha', 'Gary', 'Marco', 'Ehsan','Haretha','Krishna', 'Mohammad Azizul Huq','Mohammad Mosiur Rahman','Samara', 'Vignesh', 'Zoey Zou', 'Mohammad Subhiyeh'];
 
 const postcodes = [1000, 1050, 1250, 1300, 1550, 1700, 1950, 2000, 2100, 2200, 2250, 2450];
@@ -40,6 +43,7 @@ for (i=0; i<15; i++){
 
 }
 
+
 console.log(arrayOfStudents);
 
 //A funtion to fin the avarge
@@ -52,7 +56,9 @@ function findAvarage(array) {
     }
     
     tottal = tottal / array.length ;
-    console.log(`The Average of the class is ${tottal} .`);
+
+
+    result += `The Average of the class is ${tottal} .`;
 }
 
 findAvarage(arrayOfStudents);
@@ -72,7 +78,8 @@ function findLowestGrade() {
     for (var i = 0; i<arrayOfStudents.length; i++) {
         if (minim == arrayOfStudents[i].grade) {
             let minGrade = arrayOfStudents[i];
-            return  console.log(`${minGrade.name} got the lowest grade, he/she scored ${minim}, Keep it up ${minGrade.name}, next time you are gonna do better!`)
+
+            result += `${minGrade.name} got the lowest grade, he/she scored ${minim}, Keep it up ${minGrade.name}, next time you are gonna do better!`;
         }
     }
     
@@ -89,7 +96,7 @@ function findHighestGrade() {
     for (var i = 0; i<arrayOfStudents.length; i++) {
         if (maxim == arrayOfStudents[i].grade) {
             let maxGrade = arrayOfStudents[i];
-            return  console.log(`${maxGrade.name} got the highest grade, he/she scored ${maxim}, Good job ${maxGrade.name}!`)
+            result += `${maxGrade.name} got the highest grade, he/she scored ${maxim}, Good job ${maxGrade.name}!`;
         }
     }
 
@@ -98,3 +105,5 @@ function findHighestGrade() {
 findLowestGrade();
 
 findHighestGrade();
+
+document.getElementById('result').innerHTML=result;
