@@ -58,7 +58,7 @@ function findAvarage(array) {
     tottal = tottal / array.length ;
 
 
-    result += `The Average of the class is ${tottal} .`;
+    result += `<br />The Average of the class is ${tottal} .`;
 }
 
 findAvarage(arrayOfStudents);
@@ -79,7 +79,7 @@ function findLowestGrade() {
         if (minim == arrayOfStudents[i].grade) {
             let minGrade = arrayOfStudents[i];
 
-            result += `${minGrade.name} got the lowest grade, he/she scored ${minim}, Keep it up ${minGrade.name}, next time you are gonna do better!`;
+            result += ` <br />${minGrade.name} got the lowest grade, he/she scored ${minim}, Keep it up ${minGrade.name}, next time you are gonna do better!`;
         }
     }
     
@@ -96,7 +96,7 @@ function findHighestGrade() {
     for (var i = 0; i<arrayOfStudents.length; i++) {
         if (maxim == arrayOfStudents[i].grade) {
             let maxGrade = arrayOfStudents[i];
-            result += `${maxGrade.name} got the highest grade, he/she scored ${maxim}, Good job ${maxGrade.name}!`;
+            result += `<br />${maxGrade.name} got the highest grade, he/she scored ${maxim}, Good job ${maxGrade.name}!`;
         }
     }
 
