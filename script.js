@@ -3,22 +3,22 @@
 
 let result = '';
 
-let names = ['Zeeshan', 'Anas', 'Sajid', 'Anuradha', 'Gary', 'Marco', 'Ehsan','Haretha','Krishna', 'Mohammad Azizul Huq','Mohammad Mosiur Rahman','Samara', 'Vignesh', 'Zoey Zou', 'Mohammad Subhiyeh'];
+let names = ['Zeeshan', 'Anas', 'Sajid', 'Anuradha', 'Gary', 'Marco', 'Ehsan', 'Haretha', 'Krishna', 'Mohammad Azizul Huq', 'Mohammad Mosiur Rahman', 'Samara', 'Vignesh', 'Zoey Zou', 'Mohammad Subhiyeh'];
 
 const postcodes = [1000, 1050, 1250, 1300, 1550, 1700, 1950, 2000, 2100, 2200, 2250, 2450];
 
 //create functions to generate, with the help of .random, the postcodes, phonenumbers and grades.
 
 function getRandomPost() {
-    return postcodes[Math.floor(Math.random() * postcodes.length) ]
+    return postcodes[Math.floor(Math.random() * postcodes.length)]
 }
 
 function getRandomPhone() {
-    return ('4'+ Math.floor(Math.random() * (9999999 - 1111111) + 1111111 )); 
+    return ('4' + Math.floor(Math.random() * (9999999 - 1111111) + 1111111));
 }
 
 function getRandomGrade() {
-    return Math.floor(Math.random() * (95 - 60) + 60 );
+    return Math.floor(Math.random() * (95 - 60) + 60);
 }
 
 
@@ -31,8 +31,8 @@ function CreateStudent(name, postcode, telephone, course, grade) {
 }
 
 let arrayOfStudents = [];
-for (i=0; i<15; i++){
-    arrayOfStudents[i] = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade());
+for (i = 0; i < 15; i++) {
+    arrayOfStudents[i] = new CreateStudent(names.pop(), getRandomPost(), getRandomPhone(), 'Hack Your Future 06', getRandomGrade());
 }
 
 
@@ -41,13 +41,13 @@ console.log(arrayOfStudents);
 //A funtion to fin the avarge
 
 function findAvarage(array) {
-    let tottal = 0; 
+    let tottal = 0;
 
-    for (var i = 0; i<array.length; i++){
-        tottal += array[i].grade;     
+    for (var i = 0; i < array.length; i++) {
+        tottal += array[i].grade;
     }
-    
-    tottal = tottal / array.length ;
+
+    tottal = tottal / array.length;
 
 
     result += `<br />The Average of the class is ${tottal} .`;
@@ -55,10 +55,10 @@ function findAvarage(array) {
 
 findAvarage(arrayOfStudents);
 
-let grades_ = [] ;
+let grades_ = [];
 
-for (var i = 0; i <arrayOfStudents.length; i++) {
-    grades_.push(arrayOfStudents[i].grade) ;
+for (var i = 0; i < arrayOfStudents.length; i++) {
+    grades_.push(arrayOfStudents[i].grade);
 }
 
 //A funtion to fin the lowest grade
@@ -66,15 +66,15 @@ for (var i = 0; i <arrayOfStudents.length; i++) {
 function findLowestGrade() {
 
     let minim = Math.min(...grades_);
-    
-    for (var i = 0; i<arrayOfStudents.length; i++) {
+
+    for (var i = 0; i < arrayOfStudents.length; i++) {
         if (minim == arrayOfStudents[i].grade) {
             let minGrade = arrayOfStudents[i];
 
             result += ` <br />${minGrade.name} got the lowest grade, he/she scored ${minim}, Keep it up ${minGrade.name}, next time you are gonna do better!`;
         }
     }
-    
+
 }
 
 //A funtion to fin the highest
@@ -85,7 +85,7 @@ function findHighestGrade() {
 
     let maxim = Math.max(...grades_);
 
-    for (var i = 0; i<arrayOfStudents.length; i++) {
+    for (var i = 0; i < arrayOfStudents.length; i++) {
         if (maxim == arrayOfStudents[i].grade) {
             let maxGrade = arrayOfStudents[i];
             result += `<br />${maxGrade.name} got the highest grade, he/she scored ${maxim}, Good job ${maxGrade.name}!`;
@@ -99,7 +99,7 @@ findLowestGrade();
 findHighestGrade();
 
 
-document.getElementById('result').innerHTML=result;
+document.getElementById('result').innerHTML = result;
 
 
 // Print students information
@@ -107,12 +107,12 @@ document.getElementById('result').innerHTML=result;
 let studentsHtml = '';
 
 
-arrayOfStudents.forEach(function(student) {
-    studentsHtml += `<p>Name: ${student.name} --- Grade: ${student.grade} </p> `;
-  });
+function printStudentInfo(student) {
+    return `<p>Name: ${student.name} <---> Grade: ${student.grade} </p> `;
+}
 
-  document.getElementById('students').innerHTML=studentsHtml;
+arrayOfStudents.forEach(function (student) {
+    studentsHtml += printStudentInfo(student);
+});
 
-
-
-
+document.getElementById('students').innerHTML = studentsHtml;
