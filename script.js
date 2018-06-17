@@ -21,8 +21,6 @@ function getRandomGrade() {
     return Math.floor(Math.random() * (95 - 60) + 60 );
 }
 
-//create a function constructor to generate students objects
-
 
 function CreateStudent(name, postcode, telephone, course, grade) {
     this.name = name;
@@ -32,15 +30,9 @@ function CreateStudent(name, postcode, telephone, course, grade) {
     this.grade = grade;
 }
 
-//create all 14 students
-
-//new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade() )
-
 let arrayOfStudents = [];
 for (i=0; i<15; i++){
-
     arrayOfStudents[i] = new CreateStudent(names.pop(), getRandomPost() , getRandomPhone(), 'Hack Your Future 06', getRandomGrade());
-
 }
 
 
@@ -106,4 +98,21 @@ findLowestGrade();
 
 findHighestGrade();
 
+
 document.getElementById('result').innerHTML=result;
+
+
+// Print students information
+
+let studentsHtml = '';
+
+
+arrayOfStudents.forEach(function(student) {
+    studentsHtml += `<p>Name: ${student.name} --- Grade: ${student.grade} </p> `;
+  });
+
+  document.getElementById('students').innerHTML=studentsHtml;
+
+
+
+
